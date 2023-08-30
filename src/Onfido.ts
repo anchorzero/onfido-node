@@ -12,6 +12,7 @@ import { Reports } from "./resources/Reports";
 import { SdkTokens } from "./resources/SdkTokens";
 import { Webhooks } from "./resources/Webhooks";
 import { WorkflowRuns } from "./resources/WorkflowRuns";
+import { Monitors } from "./resources/Monitors";
 
 export enum Region {
   EU = "EU",
@@ -37,6 +38,7 @@ export class Onfido {
   public readonly check: Checks;
   public readonly report: Reports;
   public readonly workflowRun: WorkflowRuns;
+  public readonly monitor: Monitors;
   // Other endpoints
   public readonly address: Addresses;
   public readonly webhook: Webhooks;
@@ -81,6 +83,7 @@ export class Onfido {
     this.check = new Checks(this.axiosInstance);
     this.report = new Reports(this.axiosInstance);
     this.workflowRun = new WorkflowRuns(this.axiosInstance);
+    this.monitor = new Monitors(this.axiosInstance);
     // Other endpoints
     this.address = new Addresses(this.axiosInstance);
     this.webhook = new Webhooks(this.axiosInstance);
