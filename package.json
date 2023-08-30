@@ -24,6 +24,7 @@
   },
   "scripts": {
     "build": "rollup -c rollup.config.ts",
+    "prepare": "npm run build",
     "test": "jest",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "inspect": "tslint 'src/**/*.ts' 'test/**/*.ts' && prettier --check README.md",
